@@ -1,3 +1,38 @@
 body {
+  height: 100vh;
+  margin: 0px;
+}
 
+main {
+  height: 100%;
+  width: 100%;
+}
+
+.left-pane {
+  height: 100%;
+  width: 25%;
+  float: left;
+  background: linear-gradient(PaleGreen, MediumSeaGreen);
+}
+
+h2 {
+  text-align: center;
+}
+
+.middle-pane {
+  height: 100%;
+  width: 50%;
+  float: left;
+  background-color: LightPink;
+}
+
+h1 {
+  text-align: center;
+}
+
+.right-pane {
+  height: 100%;
+  width: 25%;
+  float: right;
+  background: linear-gradient(PaleGreen, MediumSeaGreen);
 }
