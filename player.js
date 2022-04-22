@@ -3,9 +3,8 @@ class Player {
     this.id = id;
     this.token = token;
     this.wins = 0;
-    this.turn = false;
   }
-  increaseWins(wins) {
+  increaseWins() {
     this.wins++;
   }
 }
