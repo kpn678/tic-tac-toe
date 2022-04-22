@@ -1,1 +1,1 @@
-var
+var game = new Game();
