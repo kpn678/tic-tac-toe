@@ -25,17 +25,6 @@ class Game {
     }
   }
 
-  updateTurn() {
-    this.turnCounter++;
-    if (this.currentPlayer === this.player1) {
-      this.currentPlayer = this.player2;
-      console.log('Player 2 Turn');
-    } else {
-      this.currentPlayer = this.player1;
-      console.log('Player 1 Turn');
-    }
-  }
-
   checkForWin() {
     if ((this.board[0] === this.player1.token && this.board[1] === this.player1.token && this.board[2] === this.player1.token) ||
     (this.board[3] === this.player1.token && this.board[4] === this.player1.token && this.board[5] === this.player1.token) ||
@@ -64,6 +53,17 @@ class Game {
       this.resetGame();
     } else {
       this.updateTurn();
+    }
+  }
+
+  updateTurn() {
+    this.turnCounter++;
+    if (this.currentPlayer === this.player1) {
+      this.currentPlayer = this.player2;
+      console.log('Player 2 Turn');
+    } else {
+      this.currentPlayer = this.player1;
+      console.log('Player 1 Turn');
     }
   }
 
