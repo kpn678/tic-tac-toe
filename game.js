@@ -4,6 +4,7 @@ class Game {
     this.player2 = new Player(2, 'O');
     this.currentPlayer = this.player1;
     this.turnCounter = 0;
+    this.gameWon = false;
     this.gamesPlayed = 0;
   }
 
@@ -18,17 +19,12 @@ class Game {
   }
 
   checkGameStatus() {
-    if (this.checkWinningCombos(this.player1.choices) === true) {
-      console.log('Player 1 Wins!')
-      this.player1.increaseWins();
-      this.resetGame();
-    } else if (this.checkWinningCombos(this.player2.choices) === true) {
-      console.log('Player 2 Wins!')
-      this.player2.increaseWins();
-      this.resetGame();
+    if (this.checkWinningCombos(this.currentPlayer.choices) === true) {
+      console.log(`${this.currentPlayer.id} wins!`)
+      this.currentPlayer.increaseWins();
     } else if (this.turnCounter === 9) {
       console.log('This is a draw!')
-      this.resetGame();
+      // this.resetGame();
     } else {
       this.updateTurn();
     }
@@ -43,6 +39,7 @@ class Game {
     (playerCombos.includes('b2') && playerCombos.includes('b5') && playerCombos.includes('b8')) ||
     (playerCombos.includes('b0') && playerCombos.includes('b4') && playerCombos.includes('b8')) ||
     (playerCombos.includes('b2') && playerCombos.includes('b4') && playerCombos.includes('b6'))) {
+      this.gameWon = true;
       return true;
     }
   }
@@ -59,11 +56,14 @@ class Game {
 
   resetGame() {
     this.gamesPlayed++
+    this.player1.choices = [];
+    this.player2.choices = [];
+    this.turnCounter = 0;
+    this.gameWon = false;
     if (this.gamesPlayed % 2 === 0) {
       this.currentPlayer = this.player1;
     } else {
       this.currentPlayer = this.player2;
     }
-    this.turnCounter = 0;
   }
 };
