@@ -22,9 +22,10 @@ class Game {
     if (this.checkWinningCombos(this.currentPlayer.choices) === true) {
       console.log(`${this.currentPlayer.id} wins!`)
       this.currentPlayer.increaseWins();
+      this.resetGameTimer();
     } else if (this.turnCounter === 9) {
       console.log('This is a draw!')
-      // this.resetGame();
+      this.resetGameTimer();
     } else {
       this.updateTurn();
     }
@@ -54,7 +55,11 @@ class Game {
     }
   }
 
-  resetGame() {
+  resetGameTimer() {
+    setTimeout(this.resetGameData.bind(this), 4000);
+  }
+
+  resetGameData() {
     this.gamesPlayed++
     this.player1.choices = [];
     this.player2.choices = [];
