@@ -1,19 +1,17 @@
+var game = new Game();
 
 //query selectors
-box0 = document.querySelector('#b0');
-box1 = document.querySelector('#b1');
-box2 = document.querySelector('#b2');
-box3 = document.querySelector('#b3');
-box4 = document.querySelector('#b4');
-box5 = document.querySelector('#b5');
-box6 = document.querySelector('#b6');
-box7 = document.querySelector('#b7');
-box8 = document.querySelector('#b8');
-
-//global variables
-var game = new Game();
-var gameBoard = document.querySelector('.game-board');
 var turnHeader = document.querySelector('h2');
+var boxes = document.querySelectorAll('.box');
+var box0 = document.querySelector('#b0');
+var box1 = document.querySelector('#b1');
+var box2 = document.querySelector('#b2');
+var box3 = document.querySelector('#b3');
+var box4 = document.querySelector('#b4');
+var box5 = document.querySelector('#b5');
+var box6 = document.querySelector('#b6');
+var box7 = document.querySelector('#b7');
+var box8 = document.querySelector('#b8');
 var player1Wins = document.querySelector('#player1-wins');
 var player2Wins = document.querySelector('#player2-wins');
 
@@ -29,9 +27,9 @@ box7.addEventListener('click', chooseBox);
 box8.addEventListener('click', chooseBox);
 
 function chooseBox() {
-  var box = event.target
+  var box = event.target;
   box.innerText = game.currentPlayer.token;
-  box.classList.add("not-allowed");
+  box.classList.add("disabled");
   var boxID = event.target.getAttribute('id');
   game.updateGameBoard(boxID);
   updateTurnHeader();
@@ -39,20 +37,24 @@ function chooseBox() {
 
 function updateTurnHeader() {
   if (game.gameWon === true) {
-    turnHeader.innerText = `${game.currentPlayer.token} Won!`
+    turnHeader.innerText = `Player ${game.currentPlayer.token} Won!`
+    for (var i = 0; i < boxes.length; i++) {
+      boxes[i].classList.add("disabled");
+    }
   } else if (game.turnCounter === 9) {
     turnHeader.innerText = 'This is a draw!'
   } else {
-    turnHeader.innerText = `It is ${game.currentPlayer.token}'s turn!`
+    turnHeader.innerText = `It is Player ${game.currentPlayer.token}'s turn!`
   }
 }
 
-// function clearGameBoard() {
-//   var boxes = document.querySelector('.box');
-//   boxes.innerText = "";
-//   boxes.classList.remove("not-allowed");
-// // resetGame is already being invoked, so game data is good to go
-// };
+function clearGameBoard() {
+  for (var i = 0; i < boxes.length; i++) {
+    boxes[i].innerText = "";
+    boxes[i].classList.remove("disabled");
+    turnHeader.innerText = `It is Player ${game.currentPlayer.token}'s turn!`;
+  }
+};
 
 //function updateWinsDisplays() {
 // updates as player increase wins updates
