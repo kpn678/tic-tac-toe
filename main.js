@@ -15,33 +15,46 @@ var turnHeader = document.querySelector('h2');
 var player1Wins = document.querySelector('#player1-wins');
 var player2Wins = document.querySelector('#player2-wins');
 
-box0.addEventListener('click', chooseBox, {once: true});
-box1.addEventListener('click', chooseBox, {once: true});
-box2.addEventListener('click', chooseBox, {once: true});
-box3.addEventListener('click', chooseBox, {once: true});
-box4.addEventListener('click', chooseBox, {once: true});
-box5.addEventListener('click', chooseBox, {once: true});
-box6.addEventListener('click', chooseBox, {once: true});
-box7.addEventListener('click', chooseBox, {once: true});
-box8.addEventListener('click', chooseBox, {once: true});
+//event listeners
+box0.addEventListener('click', chooseBox);
+box1.addEventListener('click', chooseBox);
+box2.addEventListener('click', chooseBox);
+box3.addEventListener('click', chooseBox);
+box4.addEventListener('click', chooseBox);
+box5.addEventListener('click', chooseBox);
+box6.addEventListener('click', chooseBox);
+box7.addEventListener('click', chooseBox);
+box8.addEventListener('click', chooseBox);
 
 function chooseBox() {
   var box = event.target;
   if (game.currentPlayer === game.player1) {
     box.innerText = game.player1.token;
+    box.classList.add("not-allowed");
   } else {
     box.innerText = game.player2.token;
+    box.classList.add("not-allowed");
   }
   var boxID = event.target.getAttribute('id');
   game.updateGameBoard(boxID);
+  // clearGameBoard();
 }
 
+// function clearGameBoard() {
+//   box.innerText = "";
+//add a timeout
+//make it so each box can be clicked again
+//resetGame is already being invoked, so game data is good to go
+// };
+
 // function updateTurnHeader() {
-//
-//   turnHeader.innerText = ``
+//turnHeader.innerText = ``
 //alternate player turns
 //display when someone wins
 //display if a draw happens
+//resets to correct player once win/draw occurs
 // }
 
-//function updateWinsDisplays
+//function updateWinsDisplays() {
+// updates as player increase wins updates
+//}
