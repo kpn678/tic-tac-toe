@@ -40,7 +40,6 @@ function chooseBox() {
 function updateTurnHeader() {
   if (game.gameWon === true) {
     turnHeader.innerText = `${game.currentPlayer.token} Won!`
-    console.log(`${game.currentPlayer.token} Won!`)
   } else if (game.turnCounter === 9) {
     turnHeader.innerText = 'This is a draw!'
   } else {
