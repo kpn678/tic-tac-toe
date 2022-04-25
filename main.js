@@ -12,8 +12,8 @@ var box5 = document.querySelector('#b5');
 var box6 = document.querySelector('#b6');
 var box7 = document.querySelector('#b7');
 var box8 = document.querySelector('#b8');
-var player1Wins = document.querySelector('#player1-wins');
-var player2Wins = document.querySelector('#player2-wins');
+var player1Wins = document.querySelector('#player1Wins');
+var player2Wins = document.querySelector('#player2Wins');
 
 //event listeners
 box0.addEventListener('click', chooseBox);
@@ -38,6 +38,7 @@ function chooseBox() {
 function updateTurnHeader() {
   if (game.gameWon === true) {
     turnHeader.innerText = `Player ${game.currentPlayer.token} Won!`
+    updateWinsDisplays();
     for (var i = 0; i < boxes.length; i++) {
       boxes[i].classList.add("disabled");
     }
@@ -56,6 +57,7 @@ function clearGameBoard() {
   }
 };
 
-//function updateWinsDisplays() {
-// updates as player increase wins updates
-//}
+function updateWinsDisplays() {
+  player1Wins.innerText = `${game.player1.wins} Wins`;
+  player2Wins.innerText = `${game.player2.wins} Wins`;
+}
