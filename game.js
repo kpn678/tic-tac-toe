@@ -3,9 +3,9 @@ class Game {
     this.player1 = new Player(1, 'X');
     this.player2 = new Player(2, 'O');
     this.currentPlayer = this.player1;
-    this.turnCounter = 0;
-    this.gameWon = false;
     this.gamesPlayed = 0;
+    this.gameWon = false;
+    this.turnCounter = 0;
   }
 
   updateGameBoard(selectedSpot) {
@@ -20,11 +20,10 @@ class Game {
 
   checkGameStatus() {
     if (this.checkWinningCombos(this.currentPlayer.choices) === true) {
-      console.log(`${this.currentPlayer.id} wins!`)
+      this.gameWon = true;
       this.currentPlayer.increaseWins();
       this.resetGameTimer();
     } else if (this.turnCounter === 9) {
-      console.log('This is a draw!')
       this.resetGameTimer();
     } else {
       this.updateTurn();
@@ -40,7 +39,6 @@ class Game {
     (playerCombos.includes('b2') && playerCombos.includes('b5') && playerCombos.includes('b8')) ||
     (playerCombos.includes('b0') && playerCombos.includes('b4') && playerCombos.includes('b8')) ||
     (playerCombos.includes('b2') && playerCombos.includes('b4') && playerCombos.includes('b6'))) {
-      this.gameWon = true;
       return true;
     }
   }
@@ -48,27 +46,26 @@ class Game {
   updateTurn() {
     if (this.currentPlayer === this.player1) {
       this.currentPlayer = this.player2;
-      console.log('Player 2 Turn');
     } else {
       this.currentPlayer = this.player1;
-      console.log('Player 1 Turn');
     }
   }
 
   resetGameTimer() {
-    setTimeout(this.resetGameData.bind(this), 4000);
+    setTimeout(this.resetGameData.bind(this), 1000);
   }
 
   resetGameData() {
-    this.gamesPlayed++
     this.player1.choices = [];
     this.player2.choices = [];
-    this.turnCounter = 0;
+    this.gamesPlayed++
     this.gameWon = false;
+    this.turnCounter = 0;
     if (this.gamesPlayed % 2 === 0) {
       this.currentPlayer = this.player1;
     } else {
       this.currentPlayer = this.player2;
     }
+    clearGameBoard();
   }
 };
