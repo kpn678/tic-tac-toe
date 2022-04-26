@@ -19,7 +19,7 @@ class Game {
   }
 
   checkGameStatus() {
-    if (this.checkWinningCombos(this.currentPlayer.choices) === true) {
+    if (this.checkWinningCombos(this.currentPlayer.choices)) {
       this.gameWon = true;
       this.currentPlayer.increaseWins();
       this.resetGameTimer();
@@ -58,7 +58,7 @@ class Game {
   resetGameData() {
     this.player1.choices = [];
     this.player2.choices = [];
-    this.gamesPlayed++
+    this.gamesPlayed++;
     this.gameWon = false;
     this.turnCounter = 0;
     if (this.gamesPlayed % 2 === 0) {

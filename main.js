@@ -36,7 +36,7 @@ function chooseBox() {
 }
 
 function updateTurnHeader() {
-  if (game.gameWon === true) {
+  if (game.gameWon) {
     turnHeader.innerText = `Player ${game.currentPlayer.token} Won!`
     updateWinsDisplays();
     for (var i = 0; i < boxes.length; i++) {
@@ -49,6 +49,11 @@ function updateTurnHeader() {
   }
 }
 
+function updateWinsDisplays() {
+  player1Wins.innerText = `${game.player1.wins} Wins`;
+  player2Wins.innerText = `${game.player2.wins} Wins`;
+}
+
 function clearGameBoard() {
   for (var i = 0; i < boxes.length; i++) {
     boxes[i].innerText = "";
@@ -56,8 +61,3 @@ function clearGameBoard() {
     turnHeader.innerText = `It is Player ${game.currentPlayer.token}'s turn!`;
   }
 };
-
-function updateWinsDisplays() {
-  player1Wins.innerText = `${game.player1.wins} Wins`;
-  player2Wins.innerText = `${game.player2.wins} Wins`;
-}
