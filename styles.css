@@ -68,7 +68,7 @@ h2 {
 
 .disabled {
   cursor: not-allowed;
-  pointer-events: all !important;
+  pointer-events: none;
 }
 
 .box:nth-child(1),
