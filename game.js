@@ -48,7 +48,7 @@ class Game {
   }
 
   resetGameTimer() {
-    setTimeout(this.resetGameData.bind(this), 1000);
+    setTimeout(this.resetGameData.bind(this), 3000);
   }
 
   resetGameData() {
@@ -62,6 +62,5 @@ class Game {
     } else {
       this.currentPlayer = this.player2;
     }
-    clearGameBoard();
   }
 };

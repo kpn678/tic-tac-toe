@@ -27,10 +27,12 @@ function updateTurnHeader() {
     for (var i = 0; i < boxes.length; i++) {
       boxes[i].classList.add("disabled");
     }
+    resetGameBoardTimer();
   } else if (game.turnCounter === 9) {
     turnHeader.innerText = 'This is a draw!'
+    resetGameBoardTimer();
   } else {
-    turnHeader.innerText = `It is Player ${game.currentPlayer.token}'s turn!`
+    turnHeader.innerText = `It's Player ${game.currentPlayer.token}'s turn!`
   }
 }
 
@@ -39,10 +41,14 @@ function updateWinsDisplays() {
   player2Wins.innerText = `${game.player2.wins} Wins`;
 }
 
+function resetGameBoardTimer() {
+  setTimeout(clearGameBoard, 3000);
+}
+
 function clearGameBoard() {
   for (var i = 0; i < boxes.length; i++) {
     boxes[i].innerText = "";
     boxes[i].classList.remove("disabled");
-    turnHeader.innerText = `It is Player ${game.currentPlayer.token}'s turn!`;
+    turnHeader.innerText = `It's Player ${game.currentPlayer.token}'s turn!`;
   }
 };
