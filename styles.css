@@ -14,7 +14,8 @@ main {
   height: 100%;
   width: 25%;
   float: left;
-  background: linear-gradient(PaleGreen, MediumSeaGreen);
+  background-image: url('https://wallpaperaccess.com/full/777319.jpg');
+  background-size: cover;
 }
 
 h3 {
@@ -35,12 +36,11 @@ h4 {
   height: 100%;
   width: 50%;
   float: left;
-  background-color: LightPink;
+  background: linear-gradient(PaleVioletRed, LightPink);
 }
 
 h1 {
   font-size: 2.5em;
-  font-style: italic;
   font-weight: 900;
 }
 
@@ -96,5 +96,6 @@ h2 {
   height: 100%;
   width: 25%;
   float: right;
-  background: linear-gradient(PaleGreen, MediumSeaGreen);
+  background-image: url('https://i.pinimg.com/originals/7e/0b/99/7e0b994ab423917021c7f3ddbf977486.jpg');
+  background-size: cover;
 }
