@@ -6,7 +6,7 @@
 - [Video Walkthrough](#video-walkthrough)
 - [Code Architecture](#code-architecture)
 - [Technologies Implemented](#technologies-implemented)
-- [Reflections](#reflections)
+- [Reflection](#reflection)
 - [Contributor](#contributor)
 
 ## Overview
@@ -28,7 +28,7 @@ The rubric and specs can be found [here](https://frontend.turing.edu/projects/mo
 ## Video Walkthrough
 
 ### Click Below ↓
-
+[<img width="628" alt="Screenshot of Tic-Tac-Toe app" src="https://user-images.githubusercontent.com/99382481/165406328-2a9b4e6a-54ed-4bb1-8f00-5ed1d0fe083d.png">](https://drive.google.com/file/d/1sfqe5wGNtpKwxWW_2HF_E467JdtXiAZl/view?usp=sharing)
 
 ## Code Architecture
 - *index.html*- the basic layout of the app is detailed here
@@ -39,8 +39,8 @@ The rubric and specs can be found [here](https://frontend.turing.edu/projects/mo
 - *assets folder*- background pictures for the CSS are found here
 
 ## Technologies Implemented
-- CSS
 - HTML
+- CSS
 - JavaScript
 
 ## Reflections
