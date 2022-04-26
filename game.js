@@ -1,7 +1,7 @@
 class Game {
   constructor() {
-    this.player1 = new Player(1, 'X');
-    this.player2 = new Player(2, 'O');
+    this.player1 = new Player(1, String.fromCodePoint(0x1F33C));
+    this.player2 = new Player(2, String.fromCodePoint(0x1F343));
     this.currentPlayer = this.player1;
     this.gamesPlayed = 0;
     this.gameWon = false;
@@ -10,16 +10,12 @@ class Game {
 
   updateGameBoard(selectedSpot) {
     this.turnCounter++;
-    if (this.currentPlayer === this.player1) {
-      this.player1.choices.push(selectedSpot);
-    } else {
-      this.player2.choices.push(selectedSpot);
-    }
+    this.currentPlayer.choices.push(selectedSpot);
     this.checkGameStatus();
   }
 
   checkGameStatus() {
-    if (this.checkWinningCombos(this.currentPlayer.choices) === true) {
+    if (this.checkWinningCombos(this.currentPlayer.choices)) {
       this.gameWon = true;
       this.currentPlayer.increaseWins();
       this.resetGameTimer();
@@ -52,13 +48,13 @@ class Game {
   }
 
   resetGameTimer() {
-    setTimeout(this.resetGameData.bind(this), 1000);
+    setTimeout(this.resetGameData.bind(this), 3000);
   }
 
   resetGameData() {
     this.player1.choices = [];
     this.player2.choices = [];
-    this.gamesPlayed++
+    this.gamesPlayed++;
     this.gameWon = false;
     this.turnCounter = 0;
     if (this.gamesPlayed % 2 === 0) {
@@ -66,6 +62,5 @@ class Game {
     } else {
       this.currentPlayer = this.player2;
     }
-    clearGameBoard();
   }
 };
