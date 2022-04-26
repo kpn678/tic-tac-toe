@@ -43,7 +43,7 @@ The rubric and specs can be found [here](https://frontend.turing.edu/projects/mo
 - CSS
 - JavaScript
 
-## Reflections
+## Reflection
 This project definitely tested the limits of what I have been learning in class. There were moments when I felt overwhelmed and had no idea where to begin. In the end, planning out each day, but being flexible when I did not get as much done as I wanted (I lost a lot of work time dealing with the stomach flu), while also knowing when to reach out for help, made this process manageable for me. I am proud of the work I produced. For future directions, local storage is something that I would implement to have the game counter and wins persist. There is also a lot of potential to make the CSS a lot more fun and interactive, and I would love to delve into that. Overall, this was a rough but valuable learning experience.
 
 ## Contributor
