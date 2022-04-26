@@ -1,7 +1,7 @@
 class Game {
   constructor() {
-    this.player1 = new Player(1, 'X');
-    this.player2 = new Player(2, 'O');
+    this.player1 = new Player(1, String.fromCodePoint(0x1F33C));
+    this.player2 = new Player(2, String.fromCodePoint(0x1F343));
     this.currentPlayer = this.player1;
     this.gamesPlayed = 0;
     this.gameWon = false;
