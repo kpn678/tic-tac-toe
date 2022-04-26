@@ -8,21 +8,11 @@ class Game {
     this.turnCounter = 0;
   }
 
-  // updateGameBoard(selectedSpot) {
-  //   this.turnCounter++;
-  //   if (this.currentPlayer === this.player1) {
-  //     this.player1.choices.push(selectedSpot);
-  //   } else {
-  //     this.player2.choices.push(selectedSpot);
-  //   }
-  //   this.checkGameStatus();
-  // }
   updateGameBoard(selectedSpot) {
     this.turnCounter++;
     this.currentPlayer.choices.push(selectedSpot);
     this.checkGameStatus();
   }
-
 
   checkGameStatus() {
     if (this.checkWinningCombos(this.currentPlayer.choices)) {
