@@ -16,9 +16,10 @@ main {
   background: linear-gradient(PaleGreen, MediumSeaGreen);
 }
 
-h2 {
+h2,
+h3,
+h4 {
   text-align: center;
-
 }
 
 .middle-pane {
@@ -42,6 +43,12 @@ h2 {
   width: 125px;
   height: 125px;
   border: 7px solid White;
+  cursor: pointer;
+}
+
+.disabled {
+  cursor: not-allowed;
+  pointer-events: all !important;
 }
 
 .box:nth-child(1), .box:nth-child(2), .box:nth-child(3) {
