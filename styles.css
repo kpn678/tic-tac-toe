@@ -2,6 +2,7 @@ body {
   height: 100vh;
   margin: 0px;
   color: white;
+  font-family: "Handlee";
 }
 
 main {
@@ -16,10 +17,15 @@ main {
   background: linear-gradient(PaleGreen, MediumSeaGreen);
 }
 
-h2,
-h3,
-h4 {
+h3 {
+  font-size: 2.25em;
   text-align: center;
+}
+
+h4 {
+  font-size: 1.5em;
+  text-align: center;
+  font-weight: 100;
 }
 
 .middle-pane {
@@ -32,6 +38,17 @@ h4 {
   background-color: LightPink;
 }
 
+h1 {
+  font-size: 2.5em;
+  font-style: italic;
+  font-weight: 900;
+}
+
+h2 {
+  font-size: 1.75em;
+  font-weight: 100;
+}
+
 .game-board {
   margin-top: 50px;
   display: grid;
@@ -42,7 +59,7 @@ h4 {
 .box {
   width: 125px;
   height: 125px;
-  border: 7px solid White;
+  border: 6.25px solid White;
   cursor: pointer;
 }
 
@@ -51,19 +68,27 @@ h4 {
   pointer-events: all !important;
 }
 
-.box:nth-child(1), .box:nth-child(2), .box:nth-child(3) {
+.box:nth-child(1),
+.box:nth-child(2),
+.box:nth-child(3) {
   border-top: none;
 }
 
-.box:nth-child(7), .box:nth-child(8), .box:nth-child(9) {
+.box:nth-child(7),
+.box:nth-child(8),
+.box:nth-child(9) {
   border-bottom: none;
 }
 
-.box:nth-child(1), .box:nth-child(4), .box:nth-child(7) {
+.box:nth-child(1),
+.box:nth-child(4),
+.box:nth-child(7) {
   border-left: none;
 }
 
-.box:nth-child(3), .box:nth-child(6), .box:nth-child(9) {
+.box:nth-child(3),
+.box:nth-child(6),
+.box:nth-child(9) {
   border-right: none;
 }
 
