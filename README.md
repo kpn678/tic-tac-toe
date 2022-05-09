@@ -20,6 +20,9 @@ This version of **Tic-Tac-Toe** is a fresh, floral take on the classic game, jus
 #### Project Specs
 The rubric and specs can be found [here](https://frontend.turing.edu/projects/module-1/tic-tac-toe-solo-v2.html).
 
+#### Deployed Link
+Click [here](https://kpn678.github.io/tic-tac-toe/).
+
 ## Set Up
 1. Fork this [repository](https://github.com/kpn678/tic-tac-toe.git).
 2. Clone the repository into your local machine.
